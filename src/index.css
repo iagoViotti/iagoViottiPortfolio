@@ -27,8 +27,10 @@
   --dot-color: #7070701a;
   --dot-light-color: #e17eff81;
   --folder-color: #ffe7b4;
+  --folder-color-icon: #ffe7b4;
   --folder-color-variant-1: #ecd7a7;
-  
+  --scrollbarthumb-hover: #4A4A4A;
+
   /* Foundations */
   --bg-main: rgb(228, 228, 228);
   --fg-main: #FCF9F2;
@@ -88,8 +90,9 @@
   --dot-color: #8b8b8b1a;
   --dot-light-color: #e17eff48;
   --folder-color: #8B5CF6;
-  --folder-color-variant-1: #8B5CF6;
-  
+  --folder-color-variant-1: #7857c7;
+  --scrollbarthumb-hover: #d4b9ee;
+  --folder-color-icon: #0E0E0E;
 
   /* Foundations */
   --bg-main: #0E0E0E;
@@ -101,7 +104,7 @@
   /* Brand Accents */
   --primary-color: #8B5CF6;
   --secondary-color: hsl(258, 90%, 66%);
-  --secondary-color-variant-1: hsl(258, 50%, 56%);
+  --secondary-color-variant-1: #7857c7;
   --tertiary-color: #8B5CF6;
   --quaternary-color: #8B5CF6;
   --color-neon-purple: #8B5CF6;
@@ -133,6 +136,25 @@ body {
   background-color: var(--fg-main);
   transition: background var(--transition-slow);
 }
+
+body ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+body ::-webkit-scrollbar-thumb {
+  background-color: var(--border-primary);
+  border: 2px solid var(--bg-main);
+}
+
+body ::-webkit-scrollbar-track {
+  background-color: var(--background);
+}
+
+body ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbarthumb-hover);
+}
+
 
 :root {
   margin: 0;

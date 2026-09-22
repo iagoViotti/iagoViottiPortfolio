@@ -118,7 +118,7 @@ const OpenedFolder = ({ windowData }: OpenedFolderProps) => {
   return (
     <Rnd
       default={{
-        x: (window.innerWidth / 10) + 40, // Adicionei um pequeno offset (+40) para não abrir exatamente em cima do arquivo se ambos abrirem juntos
+        x: (window.innerWidth / 10) + 40,
         y: (window.innerHeight / 20) + 40,
         width: size[0],
         height: size[1],
@@ -135,7 +135,7 @@ const OpenedFolder = ({ windowData }: OpenedFolderProps) => {
       onMouseDownCapture={() => focusWindow(windowData.id)}
     >
       <div id='opened-folder' className={`opened-folder ${isDragging ? 'dragging' : ''}`} style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
-        <div className="opened-folder-header">
+        <div className={`opened-folder-header ${isDragging ? 'dragging' : ''}`}>
           <div className="opened-folder-header-title">{folder.name}</div>
           <div className='opened-folder-header-buttons'>
             <button onClick={() => toggleViewStyle()}>{viewStyle === 'list' ? gridIcon : listIcon}</button>

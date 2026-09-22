@@ -10,7 +10,7 @@
   user-select: none;
   border: 1px solid transparent;
   color: var(--text-main);
-  fill: var(--folder-color);
+  fill: var(--folder-color-icon);
   transition: color var(--transition-slow);
   transition: fill var(--transition-slow);
 }

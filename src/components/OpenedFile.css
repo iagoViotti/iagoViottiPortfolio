@@ -39,6 +39,10 @@
   background-color: var(--secondary-color-variant-1);
 }
 
+.opened-file-header-buttons {
+  display: flex;
+}
+
 .opened-file-header-buttons button {
   cursor: pointer;
   background-color: transparent;
@@ -50,6 +54,7 @@
   border: none;
   box-sizing: border-box;
   padding: 0;
+  /* stroke-width: 100px; */
 }
 
 .opened-file-header-buttons button:hover {

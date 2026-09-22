@@ -15,7 +15,7 @@
   color: var(--text-main);
   transition: color var(--transition-slow);
   transition: fill var(--transition-slow);
-  fill: var(--bg-main);
+  fill: var(--fg-main);
 }
 
 .file:hover {

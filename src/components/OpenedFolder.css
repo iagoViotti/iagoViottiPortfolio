@@ -12,6 +12,10 @@
   z-index: 1;
 }
 
+.opened-folder p {
+  color: var(--text-main);
+}
+
 .opened-folder-header {
   display: flex;
   justify-content: space-between;
@@ -53,9 +57,14 @@
   box-sizing: border-box;
   padding: 0;
 }
+.opened-folder-header-buttons button:hover {
+  /* color: var(--text-muted); */
+  backdrop-filter: contrast(0.8) brightness(1.2);
+  border-radius: 8px;
+}
 
 .opened-folder-header-buttons button:nth-child(1) {
-  border: var(--border-width-thin) solid var(--border-primary);
+  /* border: var(--border-width-thin) solid var(--border-primary);  */
 }
 
 .opened-folder-header-view {
@@ -75,24 +84,6 @@
   position: relative;
 }
 
-.scrollable-content::-webkit-scrollbar {
-  width: 10px;
-  height: 124x;
-}
-
-.scrollable-content::-webkit-scrollbar-thumb {
-  background-color: #c2c2c2;
-  border: 2px solid #f1f1f1;
-}
-
-.scrollable-content::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
-}
-
-.scrollable-content::-webkit-scrollbar-thumb:hover {
-  background-color: black;
-}
-
 
 .grid-container {
   display: grid;
@@ -108,7 +99,7 @@
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
-  background-color: #f0f0f0;
+  background-color: var(--folder-color);
   font-weight: medium;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -120,7 +111,7 @@
 }
 
 .column-header-cell:last-child {
-  border-right: none;
+  /* border-right: none; */
 }
 
 .resizer {
@@ -152,7 +143,7 @@
 }
 
 .column-item-cell:last-child {
-  border-right: none;
+  /* border-right: none; */
 }
 
 .opened-folder-column-header p,
@@ -169,15 +160,27 @@
 }
 
 .hovered {
-  background-color: #cfcfcf80;
+  background-color: var(--icon-hover-color);
 }
 
 .sorted {
-  background-color: hsl(44, 10%, 90%);
+  position: relative;
+  /* background-color: hsl(44, 10%, 90%); */
+}
+
+.sorted::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(48, 100%, 11%, 0.205);
+  z-index: -1;
 }
 
 .column-item-cell.selected {
-  background-color: #fee7b3;
+  background-color: var(--folder-color);
 }
 
 .icon-content {
@@ -215,10 +218,12 @@
     border: 1px solid #ccc;
     padding: 10px;
     box-sizing: border-box;
+    color: var(--text-main);
   }
 
   .icon-item p {
     margin: 0;
+    color: var(--text-muted);
   }
 
   .icon-item h3 {
