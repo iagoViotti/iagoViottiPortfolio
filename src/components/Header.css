@@ -12,13 +12,12 @@
   height: 48px;
 }
 
-
-
 .config {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
   box-sizing: border-box;
   color: var(--primary);
+  gap: 1rem;
 }

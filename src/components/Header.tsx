@@ -1,4 +1,5 @@
 import ThemeButton from "./ThemeButton"
+import LanguageButton from "./LanguageButton"
 import './Header.css'
 
 const Header = () => {
@@ -6,7 +7,8 @@ const Header = () => {
     <header className='header'>
       C:/ PORTFOLIO
       <div className="config">
-        <ThemeButton />
+        <LanguageButton />
+      <ThemeButton />
       </div>
     </header>
   )
