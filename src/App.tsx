@@ -8,7 +8,7 @@ import { useSelect } from "./context/SelectContext"
 import "./App.css"
 import { portfolio, bio } from "./assets/mocks"
 import { createRef, useEffect, useState, useRef } from "react"
-import ThemeButton from "./components/ThemeButton"
+import Header from "./components/Header"
 
 const App = () => {
   const { setSelected, openWindows } = useSelect()
@@ -88,12 +88,7 @@ const App = () => {
       <div className="dot-grid-base" />
       <div className="dot-grid-glow" style={{ pointerEvents: 'none' }} />
       <div className="App" id="app" style={{ position: 'relative', zIndex: 10 }}>
-        <div className='header'>
-          C:/ PORTFOLIO
-          <div className="config">
-            <ThemeButton />
-          </div>
-        </div>
+        <Header />
         <div className="grid" id='grid'>
           <Folder {...portfolio} />
           <File {...bio} />

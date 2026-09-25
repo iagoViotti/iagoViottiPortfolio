@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  background-color: var(--fg-main);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: var(--border-width-thick) solid var(--border-color);
+  box-sizing: border-box;
+  font-weight: 700;
+  color: var(--text-main);
+  transition: var(--transition-slow);
+  height: 48px;
+}
+
+
+
+.config {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  box-sizing: border-box;
+  color: var(--primary);
+}
