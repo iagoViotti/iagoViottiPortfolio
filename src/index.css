@@ -41,8 +41,10 @@
   /* Brand Accents */
   --primary-color: #FE9D7F;
   --primary-color-variant-1: #fcb7a2cc;
+  --primary-color-variant-2: #fcb7a2cc;
   --secondary-color: hsl(261, 80%, 82%);
   --secondary-color-variant-1: hsl(261, 40%, 72%);
+  --secondary-color-variant-2: hsl(261, 80%, 82%);
   --tertiary-color: #CFFDF8;
   --quaternary-color: #EAE8DF;
   --glass: #ffffff80;
@@ -103,10 +105,12 @@
 
   /* Brand Accents */
   --primary-color: #8B5CF6;
-  --secondary-color: hsl(258, 90%, 66%);
+  --primary-color-variant-2: #1A1A1A;
+  --secondary-color: #895af6;
   --secondary-color-variant-1: #7857c7;
+  --secondary-color-variant-2: #1A1A1A;
   --tertiary-color: #8B5CF6;
-  --quaternary-color: #8B5CF6;
+  --quaternary-color: #1A1A1A;
   --color-neon-purple: #8B5CF6;
   --color-neon-cyan: #26E6FF;
   --color-neon-pink: #F189FF;

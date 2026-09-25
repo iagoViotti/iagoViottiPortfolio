@@ -11,6 +11,7 @@ const projects: IProject[] = [
     mainStack: "React",
     type: 'project',
     shortDescription: '',
+    stacks: ['React', 'React Three Fiber'],
   },
   {
     name: "HandCamera Py App",
@@ -21,7 +22,8 @@ const projects: IProject[] = [
     externalLink: "https://github.com/iagoViotti/handCameraPy",
     mainStack: "Python",
     type: 'project',
-    shortDescription: ''
+    shortDescription: '',
+    stacks: []
   },
   {
     name: "NoWaste App",
@@ -32,7 +34,8 @@ const projects: IProject[] = [
     externalLink: "https://github.com/iagoViotti/noWasteApp",
     mainStack: "React",
     type: 'project',
-    shortDescription: ''
+    shortDescription: '',
+    stacks: []
   },
   {
     name: "Grupo Vitor",
@@ -43,7 +46,8 @@ const projects: IProject[] = [
     externalLink: "https://grupovitor.com.br/",
     mainStack: "Wordpress",
     type: 'project',
-    shortDescription: ''
+    shortDescription: '',
+    stacks: []
   },
   {
     name: "Javascript Creative Coder",
@@ -54,7 +58,8 @@ const projects: IProject[] = [
     externalLink: "https://github.com/iagoViotti/creative-coder-domestika-course",
     mainStack: "Javascript",
     type: 'project',
-    shortDescription: ''
+    shortDescription: '',
+    stacks: []
   },
   {
     name: "Vekotec",
@@ -65,7 +70,8 @@ const projects: IProject[] = [
     externalLink: "https://vekotec.com.br/",
     mainStack: "React",
     type: 'project',
-    shortDescription: ''
+    shortDescription: '',
+    stacks: []
   },
   {
     name: "My Portfolio",
@@ -76,7 +82,8 @@ const projects: IProject[] = [
     externalLink: "",
     mainStack: "React",
     type: 'project',
-    shortDescription: ''
+    shortDescription: '',
+    stacks: []
   }
 ];
 
@@ -88,7 +95,12 @@ export const portfolio: IFolder = {
 export const bio: IBio = {
   name: "bio",
   type: "bio",
-  bio: 'This is my biography starting fomthe begining and ending at the finishline',
+  bio: `
+  Nascido nos anos 90, cresci vendo a internet se transformar de uma novidade tecnológica em um espaço de exploração, expressão e criação.
+  As interfaces e mundos virtuais daquela época despertaram em mim uma curiosidade que continua até hoje: como transformar uma tela em uma experiência? 
+  Hoje sou desenvolvedor web com foco em UI e frontend, unindo programação, design e minha formação como artista para criar experiências digitais visuais, interativas e expressivas.
+  Gosto de explorar a fronteira entre código e criação, transformando ideias em experiências digitais que não apenas funcionam, mas também despertam curiosidade, comunicam e convidam à interação.
+  `,
   status: 'Available',
   techStack: ["Javascript", "Typescript"],
   professionalExperience: [],

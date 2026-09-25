@@ -1,20 +1,21 @@
-import React from 'react';
 import './ProjectTemplate.css';
+import { useTranslation } from 'react-i18next';
+import { IProject } from '../../types/Index';
 
-interface IProject {
-  type: 'project';
-  name: string;
-  category: string;
-  shortDescription: string;
-  description: string;
-  year: number;
-  image: string;
-  externalLink: string;
-  mainStack: string;
-}
+// interface IProject {
+//   type: 'project';
+//   name: string;
+//   category: string;
+//   shortDescription: string;
+//   description: string;
+//   year: number;
+//   image: string;
+//   externalLink: string;
+//   mainStack: string;
+// }
 
 const ProjectTemplate = ({ file }: { file: IProject }) => {
-  const stacks = file.mainStack ? file.mainStack.split(',').map(item => item.trim()) : [];
+  const { t } = useTranslation();
 
   return (
     <div className="void-template-container">
@@ -32,7 +33,7 @@ const ProjectTemplate = ({ file }: { file: IProject }) => {
             rel="noopener noreferrer"
             className="void-launch-btn"
           >
-            LAUNCH_PROJECT
+            {t('opened_file.button')}
           </a>
         </div>
       </div>
@@ -47,7 +48,7 @@ const ProjectTemplate = ({ file }: { file: IProject }) => {
 
       <div className="void-bottom-grid">
         <div className="void-abstract-box">
-          <h2 className="void-box-title">ABSTRACT</h2>
+          <h2 className="void-box-title">{t("opened_file.abstract")}</h2>
           <p className="void-description">
             {file.description}
           </p>
@@ -56,7 +57,7 @@ const ProjectTemplate = ({ file }: { file: IProject }) => {
           <div className="void-stack-box">
             <h2 className="void-box-title black-text">MAIN STACK</h2>
             <div className="void-tags">
-              {stacks.map((stack, index) => (
+              {file.stacks.map((stack, index) => (
                 <span key={index} className="void-tag">
                   {stack}
                 </span>

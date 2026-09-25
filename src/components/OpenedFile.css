@@ -10,6 +10,7 @@
   box-sizing: border-box;
   z-index: 2;
   background-color: var(--fg-main);
+  transition: var(--transition-slow);
 }
 
 /* 
@@ -23,9 +24,11 @@
   align-items: center;
   padding: 10px;
   background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
   border-bottom: var(--border-width-thick) solid black;
   height: 2.8em;
   box-sizing: border-box;
+  transition: var(--transition-slow);
   z-index: 10;
 }
 
@@ -37,6 +40,7 @@
 
 .dragging .opened-file-header {
   background-color: var(--secondary-color-variant-1);
+  transition: none;
 }
 
 .opened-file-header-buttons {
@@ -90,6 +94,13 @@
     position: absolute;
   }
 
+  .opened-file-header-title {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    text-wrap: nowrap;
+    margin-right: 2em;
+  }
+  
   .opened-file-header-buttons button:disabled {
     opacity: 0.5 !important;
     cursor: default !important;

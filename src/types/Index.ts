@@ -1,6 +1,6 @@
 type FileType = 'project' | 'bio' | 'contact';
 
-type MainStack = 'React' | 'Python' | 'Wordpress' | 'Javascript';
+type Stack = 'React' | 'Python' | 'Wordpress' | 'Javascript' | 'React Three Fiber';
 
 interface IExperience {
   name: string;
@@ -24,6 +24,7 @@ interface IProject extends IBaseFile {
   image: string;
   externalLink: string;
   mainStack: string;
+  stacks: Stack[];
 }
 
 interface IBio extends IBaseFile {
@@ -61,4 +62,4 @@ interface IOSWindow {
   parentFolder?: IFolder;
 }
 
-export type { IProject, IBio, IFile, Window, IFolder, MainStack, IconProps, IOSWindow};
+export type { IProject, IBio, IFile, Window, IFolder, Stack, IconProps, IOSWindow};

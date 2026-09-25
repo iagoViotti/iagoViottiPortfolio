@@ -36,7 +36,6 @@ const BioTemplate = ({ file }: BioTemplateProps) => {
         </div>
       </aside>
 
-      {/* Coluna Direita: Conteúdo Principal */}
       <main className="bio-main-content">
 
         {/* MISSION / BIO */}
