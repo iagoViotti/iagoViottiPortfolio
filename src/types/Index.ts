@@ -1,4 +1,4 @@
-type FileType = 'project' | 'bio' | 'contact';
+type FileType = 'project' | 'bio';
 
 type Stack = 'React' | 'Python' | 'Wordpress' | 'Javascript' | 'React Three Fiber';
 
@@ -50,16 +50,25 @@ interface IFolder {
   Files: IFile[];
 }
 
+type AppType = 'mailer';
+
+interface IApp {
+  name: string;
+  type: 'app';
+  appType: AppType;
+  icon?: React.ReactNode;
+}
+
 type IFile = IProject | IBio
 
-type Window = IFolder | IFile
+type Window = IFolder | IFile | IApp
 
 interface IOSWindow {
   id: string;
-  type: 'folder' | 'file';
+  type: 'folder' | 'file' | 'app';
   content: Window;
   zIndex: number;
   parentFolder?: IFolder;
 }
 
-export type { IProject, IBio, IFile, Window, IFolder, Stack, IconProps, IOSWindow};
+export type { IProject, IBio, IFile, Window, IFolder, Stack, IconProps, IOSWindow, IApp};

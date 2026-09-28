@@ -1,13 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { Window, IFolder, IFile } from "../types/Index";
-
-export interface IOSWindow {
-  id: string;
-  type: 'folder' | 'file';
-  content: Window;
-  zIndex: number;
-  parentFolder?: IFolder;
-}
+import { Window, IFolder, IOSWindow } from "../types/Index";
 
 interface SelectContextType {
   // --- ESTADOS ANTIGOS RESTAURADOS PARA OS ÍCONES ---
@@ -69,7 +61,7 @@ export const SelectProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   const openWindow = (window: Window, parentFolder?: IFolder) => {
     const isFolder = 'Files' in window;
-    const type = isFolder ? 'folder' : 'file';
+    const type = isFolder ? 'folder' : (window.type === 'app' ? 'app' : 'file');
     const id = window.name;
 
     setOpenWindows((prev) => {

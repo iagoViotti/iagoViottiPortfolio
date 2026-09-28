@@ -9,6 +9,8 @@ import "./App.css"
 import { portfolio, bio } from "./assets/mocks"
 import { createRef, useEffect, useState, useRef } from "react"
 import Header from "./components/Header"
+import OpenedApp from "./components/OpenedApp"
+import DesktopApp from "./components/DesktopApp"
 
 const App = () => {
   const { setSelected, openWindows } = useSelect()
@@ -92,6 +94,7 @@ const App = () => {
         <div className="grid" id='grid'>
           <Folder {...portfolio} />
           <File {...bio} />
+          <DesktopApp {...{ name: 'Mailer', type: 'app', appType: 'mailer' }} />
           <div className='main-container'>
             <div className="home-subtitle-container">
               <h2 className="home-subtitle">web</h2>
@@ -110,6 +113,8 @@ const App = () => {
           </div>
         </div>
         {openWindows.map((win) => {
+          if (win.type === 'app')
+            return <OpenedApp key={win.id} windowData={win} />
           if (win.type === 'folder') {
             return isMobile ? (
               <OpenedFolderMobile key={win.id} windowData={win} />
