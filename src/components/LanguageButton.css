@@ -1,0 +1,101 @@
+.language-selector-container {
+  position: relative;
+  display: inline-block;
+  font-family: sans-serif;
+  /* Pode mudar para a sua fonte do sistema */
+}
+
+/* O botão que fica na barra de tarefas */
+.language-trigger {
+  background: transparent;
+  border: none;
+  color: inherit;
+  /* Herda a cor do seu header (branco/preto) */
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.language-trigger:hover {
+  background-color: rgba(128, 128, 128, 0.2);
+  /* Efeito hover sutil de SO */
+}
+
+.arrow-down {
+  font-size: 0.8rem;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%; /* Mudou para left: 50% */
+  /* Removemos o transform fixo daqui porque o React cuida disso agora */
+  margin-top: 10px;
+  background-color: #ffffff;
+  color: #333333;
+  min-width: 220px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  padding: 8px 0;
+}
+
+.dropdown-caret {
+  position: absolute;
+  top: -6px;
+  /* Removemos o left: 50% fixo daqui */
+  transform: translateX(-50%); /* Apenas centraliza o pontinho em si mesmo */
+  width: 0; 
+  height: 0; 
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+}
+
+/* Lista de idiomas */
+.language-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.1s;
+}
+
+.language-item:hover {
+  background-color: #f0f0f0;
+  /* Hover cinza claro estilo Windows/Linux */
+}
+
+.lang-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* O ponto que indica qual está ativo */
+.active-dot {
+  display: inline-block;
+  width: 10px;
+  /* Mantém um espaço fixo mesmo se estiver vazio para os textos alinharem */
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.lang-code-hint {
+  color: #666666;
+  font-size: 0.9rem;
+}

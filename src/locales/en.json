@@ -1,7 +1,26 @@
 {
+  "app": {
+    "full_stack": "Fullstack Developer",
+    "artista": "Multidisciplinary Artist",
+    "portuguese": "Portuguese (Brasil)",
+    "english": "English (USA)"
+  },
   "opened_file": {
     "button": "Launch Project",
     "abstract": "Abstract",
     "main_stack": "Main Stack"
+  },
+  "bio": {
+    "content": "Born in the 90s, I grew up watching the internet transform from a technological novelty into a space for exploration, expression, and creation...\n\nToday I am a web developer focused on UI and frontend, uniting programming, design, and my background as an artist to create visual, interactive, and expressive digital experiences."
+  },
+  "projects": {
+    "rubberduck": {
+      "category": "Web Application",
+      "description": "Debug your code by explaining it to a rubber duck"
+    },
+    "handcamera": {
+      "category": "Digital Art Installation",
+      "description": "A Python application for hand gesture recognition and snapping photos"
+    }
   }
 }
