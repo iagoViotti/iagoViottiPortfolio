@@ -109,7 +109,27 @@ const App = () => {
             </div>
           </div>
         </div>
-        {openWindows.map((win) => <Window key={win.id} windowData={win} />)}
+        {openWindows.map((win) => {
+          if (win.type === 'app')
+            return isMobile ? (
+              <OpenedAppMobile key={win.id} windowData={win} />
+            ) : (
+              <OpenedApp key={win.id} windowData={win} />
+            )
+          if (win.type === 'folder') {
+            return isMobile ? (
+              <OpenedFolderMobile key={win.id} windowData={win} />
+            ) : (
+              <OpenedFolder key={win.id} windowData={win} />
+            )
+          } else {
+            return isMobile ? (
+              <OpenedFileMobile key={win.id} windowData={win} />
+            ) : (
+              <OpenedFile key={win.id} windowData={win} />
+            )
+          }
+        })}
       </div>
     </div>
   )
