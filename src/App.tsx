@@ -6,14 +6,15 @@ import OpenedFolderMobile from "./components/OpenedFolderMobile"
 import OpenedFileMobile from "./components/OpenedFileMobile"
 import { useSelect } from "./context/SelectContext"
 import "./App.css"
-import { portfolio, bio } from "./assets/mocks"
+import { portfolio, bio, desktopApps } from "./assets/mocks"
 import { createRef, useEffect, useState, useRef } from "react"
 import Header from "./components/Header"
 import OpenedApp from "./components/OpenedApp"
 import DesktopApp from "./components/DesktopApp"
+import OpenedAppMobile from "./components/OpenedAppMobile"
 
 const App = () => {
-  const { setSelected, openWindows } = useSelect()
+  const { openWindows, setSelected } = useSelect()
   const [words] = useState(['Developer', 'Designer', 'Artist']);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [letterCount, setLetterCount] = useState(1);
@@ -87,14 +88,16 @@ const App = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
     >
-      <div className="dot-grid-base" />
+      <div className="dot-grid-base"  />
       <div className="dot-grid-glow" style={{ pointerEvents: 'none' }} />
       <div className="App" id="app" style={{ position: 'relative', zIndex: 10 }}>
         <Header />
         <div className="grid" id='grid'>
           <Folder {...portfolio} />
           <File {...bio} />
-          <DesktopApp {...{ name: 'Mailer', type: 'app', appType: 'mailer' }} />
+          {desktopApps.map((app) => (
+            <DesktopApp key={app.name} {...app} />
+          ))}
           <div className='main-container'>
             <div className="home-subtitle-container">
               <h2 className="home-subtitle">web</h2>
@@ -114,7 +117,11 @@ const App = () => {
         </div>
         {openWindows.map((win) => {
           if (win.type === 'app')
-            return <OpenedApp key={win.id} windowData={win} />
+            return isMobile ? (
+              <OpenedAppMobile key={win.id} windowData={win} />
+            ) : (
+              <OpenedApp key={win.id} windowData={win} />
+            )
           if (win.type === 'folder') {
             return isMobile ? (
               <OpenedFolderMobile key={win.id} windowData={win} />

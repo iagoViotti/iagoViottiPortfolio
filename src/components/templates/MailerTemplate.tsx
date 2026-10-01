@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './MailerTemplate.css';
+import { mailIcon } from '../../assets/svg/MailIcon';
 
 const MailerTemplate = () => {
   const [formData, setFormData] = useState({
@@ -18,8 +19,11 @@ const MailerTemplate = () => {
 
   return (
     <div className="mailer-container">
-      <header className="mailer-header-internal">
-        <h2 className="mailer-title">NOVA MENSAGEM</h2>
+      <header className="mailer-header">
+        <div className="mailer-header-internal">
+          {mailIcon}
+          <h2 className="mailer-title">NOVA MENSAGEM</h2>
+        </div>
         <p className="mailer-subtitle">Pronto para iniciar um projeto? Envie um ping.</p>
       </header>
 

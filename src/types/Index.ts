@@ -57,9 +57,10 @@ interface IApp {
   type: 'app';
   appType: AppType;
   icon?: React.ReactNode;
+  parent?: IFolder;
 }
 
-type IFile = IProject | IBio
+type IFile = IProject | IBio;
 
 type Window = IFolder | IFile | IApp
 
@@ -71,4 +72,4 @@ interface IOSWindow {
   parentFolder?: IFolder;
 }
 
-export type { IProject, IBio, IFile, Window, IFolder, Stack, IconProps, IOSWindow, IApp};
+export type { IProject, IBio, IFile, Window, IFolder, Stack, IconProps, IOSWindow, IApp, AppType, FileType, IExperience };

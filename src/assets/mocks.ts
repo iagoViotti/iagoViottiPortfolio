@@ -1,4 +1,5 @@
-import { IProject, IFolder, IBio } from '../types/Index';
+import { IProject, IFolder, IBio, IApp} from '../types/Index';
+import { mailIcon } from '../assets/svg/MailIcon';
 
 const projects: IProject[] = [
   {
@@ -106,3 +107,12 @@ export const bio: IBio = {
   professionalExperience: [],
   educationalExperience: []
 }
+
+export const desktopApps: IApp[] = [
+  {
+    name: "mailer",
+    icon: mailIcon,
+    type: "app",
+    appType: "mailer"
+  }
+]

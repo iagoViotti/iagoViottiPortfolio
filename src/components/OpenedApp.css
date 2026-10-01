@@ -1,0 +1,104 @@
+.opened-app {
+  box-shadow: 4px 4px var(--border-primary);
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: var(--border-width-thick) solid var(--border-primary);
+  box-sizing: border-box;
+  z-index: 2;
+  background-color: var(--fg-main);
+  transition: var(--transition-slow);
+}
+
+.opened-app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-bottom: var(--border-width-thick) solid black;
+  height: 2.8em;
+  box-sizing: border-box;
+  transition: var(--transition-slow);
+  z-index: 10;
+}
+
+.opened-app-header-title {
+  font-size: 1.2em;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.dragging .opened-app-header {
+  background-color: var(--primary-color-variant-1);
+  transition: none;
+}
+
+.opened-app-header-buttons {
+  display: flex;
+}
+
+.opened-app-header-buttons button {
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.8em;
+  height: 1.8em;
+  border: none;
+  box-sizing: border-box;
+  padding: 0;
+  /* stroke-width: 100px; */
+}
+
+
+.opened-app-header-buttons button:hover {
+  /* color: var(--text-muted); */
+  backdrop-filter: contrast(0.8) brightness(1.2);
+  border-radius: 8px;
+}
+
+/* .opened-app-header-buttons button:active {
+  color: var(--text-muted);
+} */
+
+.opened-app-header-buttons button:disabled {
+  opacity: 0.5 !important;
+  cursor: default;
+}
+
+.opened-app-header-buttons button:nth-child(3) {
+  margin-left: 10px;
+}
+
+.opened-app-content {
+  overflow: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .opened-app {
+    width: 100vw;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    position: absolute;
+  }
+
+  .opened-app-header-title {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    text-wrap: nowrap;
+    margin-right: 2em;
+  }
+  
+  .opened-app-header-buttons button:disabled {
+    opacity: 0.5 !important;
+    cursor: default !important;
+  }
+}

@@ -1,10 +1,13 @@
 import './DesktopApp.css';
 import { useSelect } from '../context/SelectContext';
+import Draggable from 'react-draggable'
 import { IApp } from '../types/Index';
 
 const DesktopApp = (props: IApp) => {
+  const { name, icon } = props;
   const { selected, handleClick, handleDoubleClick } = useSelect();
 
+  const isMobile = window.innerWidth < 768
   // Um ícone provisório em SVG para o Mailer (pode ser substituído depois)
   const mailIcon = (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="app-icon-svg">
@@ -13,24 +16,36 @@ const DesktopApp = (props: IApp) => {
     </svg>
   );
 
+
+  if (!isMobile) {
+    return (
+      <Draggable bounds={'body'}>
+        <div
+          className={`desktop-app ${selected === name ? 'selected' : ''}`}
+          onClick={() => { handleClick(props) }}
+          onDoubleClick={() => { handleDoubleClick(props) }}
+        >
+          <div className="desktop-app-icon">
+            {icon || mailIcon}
+          </div>
+          <p className="desktop-app-name">{name}</p>
+        </div>
+      </Draggable>
+    );
+  }
+
   return (
     <div
-      className={`desktop-app-shortcut ${selected === props.name ? 'selected' : ''}`}
-      onClick={(e) => {
-        e.stopPropagation();
-        handleClick(props);
-      }}
-      onDoubleClick={(e) => {
-        e.stopPropagation();
+      className={`desktop-app ${selected === name ? 'selected' : ''}`}
+      onClick={() => {
         handleDoubleClick(props);
       }}
     >
       <div className="desktop-app-icon">
-        {props.icon || mailIcon}
+        {icon || mailIcon}
       </div>
-      <span className="desktop-app-name">{props.name}</span>
+      <p className="desktop-app-name">{name}</p>
     </div>
-  );
-};
-
+  )
+}
 export default DesktopApp;

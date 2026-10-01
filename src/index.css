@@ -39,9 +39,9 @@
   --shadow-color: rgba(0, 0, 0, 1);
 
   /* Brand Accents */
-  --primary-color: #FE9D7F;
-  --primary-color-variant-1: #fcb7a2cc;
-  --primary-color-variant-2: #fcb7a2cc;
+  --primary-color: hsl(14, 98%, 75%);
+  --primary-color-variant-1: hsla(14, 58%, 65%, 0.8);
+  --primary-color-variant-2: hsla(14, 94%, 81%, 0.8);
   --secondary-color: hsl(261, 80%, 82%);
   --secondary-color-variant-1: hsl(261, 40%, 72%);
   --secondary-color-variant-2: hsl(261, 80%, 82%);
@@ -105,6 +105,9 @@
 
   /* Brand Accents */
   --primary-color: #8B5CF6;
+  --primary-color: #8B5CF6;
+  --primary-color-variant-1: #7857c7;
+  --primary-color-variant-2: #7857c7;
   --primary-color-variant-2: #1A1A1A;
   --secondary-color: #895af6;
   --secondary-color-variant-1: #7857c7;

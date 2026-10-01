@@ -1,4 +1,3 @@
-// import './OpenedFile.css'
 import { useSelect } from '../context/SelectContext'
 import { IOSWindow } from '../types/Index' // Importação necessária
 import { BioTemplate, ProjectTemplate } from './templates'
