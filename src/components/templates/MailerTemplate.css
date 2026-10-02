@@ -144,3 +144,23 @@ label {
   transform: translate(6px, 6px);
   box-shadow: 0px 0px 0px #000;
 }
+
+/* Estados do botão de envio */
+.brutalist-submit-btn.sending {
+  background-color: #f2f2f2;
+  color: #666;
+  cursor: wait;
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px #000;
+}
+
+.brutalist-submit-btn.success {
+  background-color: #aae3d1;
+  /* Verde do tema */
+}
+
+.brutalist-submit-btn.error {
+  background-color: #B55C4B;
+  /* Vermelho do tema */
+  color: #fff;
+}
